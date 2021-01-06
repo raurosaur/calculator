@@ -1,0 +1,85 @@
+body{
+    background: #343477;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+    display : grid;
+    background-color: #09093B;
+    height: 80%;
+    width: 30%;
+    min-height: 600px;
+    min-width: 350px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px 5px #8080B3;
+    grid-template-areas: 
+    "screen screen screen"
+    "digits digits operators";
+    justify-items: center;
+    column-gap: 2em;
+}
+
+.screen{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #8080B3;
+    height: 4rem;
+    width: 20rem;
+    margin-top: 50px;
+    border-radius: 10px;
+    grid-area: screen;
+    font-family: monospace;
+    font-size: 50px;
+}
+
+.digits{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    position: relative;
+    height: 25em;
+    width: 13em;
+    grid-area: digits;
+    border-radius: 10px;
+    top: 12px;
+    left: 20px;
+}
+
+.operators{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    height: 25em;
+    width: 6em;
+    grid-area: operators;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    left: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #09093B;
+    height: 3.4rem;
+    width: 3.4rem;
+    border-radius: 50%;
+    font-size: 30px;
+    color: white;
+    box-shadow: 1px 1px 5px 5px #8080B3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.buttons:hover{
+    transform: scale(1.05);
+}
+
+#zero{
+    grid-area: 4/2/5/3 ;
+}
