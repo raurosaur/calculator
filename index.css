@@ -59,7 +59,9 @@ body{
     grid-area: operators;
     transform: translateX(-50%);
     border-radius: 10px;
-    left: 20px;
+    left: 30px;
+    top: -1px;
+    margin-left: 10px;
 }
 
 .buttons{
@@ -74,12 +76,9 @@ body{
     color: white;
     box-shadow: 1px 1px 5px 5px #8080B3;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
 }
 
 .buttons:hover{
     transform: scale(1.05);
-}
-
-#zero{
-    grid-area: 4/2/5/3 ;
 }
