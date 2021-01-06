@@ -19,10 +19,18 @@ operators = document.querySelectorAll('.operators div');
 
 let arg0 = '', arg1 = '', operator = '';
 
+function unhighlight() {
+    operators.forEach(el => {
+        el.style.background = '#09093B';
+        el.style.color = '#FFF';
+        el.style.boxShadow = '1px 1px 5px 5px #8080B3';
+    });
+}
 
 digits.forEach( button => {
     button.addEventListener('click', (event) => {
         if (event.target.getAttribute("data-type") === 'C' || event.target.getAttribute("data-type") === 'AC') {
+            if(screen.textContent === '') unhighlight();
             screen.textContent = '';
             return;
         }
@@ -34,12 +42,7 @@ digits.forEach( button => {
 });
 
 operators[4].addEventListener('click', (event) => {
-
-    operators.forEach(el => {
-        el.style.background = '#09093B';
-        el.style.color = '#FFF';
-        el.style.boxShadow = '1px 1px 5px 5px #8080B3';
-    });
+    unhighlight();
 
     if(operator === '' || arg0 === '' || screen.innerText === ''){
         screen.textContent = 'ERROR';
@@ -57,6 +60,7 @@ operators.forEach( divs => {
         if(event.target.classList[1] === 'equal')
             return;
 
+        unhighlight();
         event.target.style.background = '#8080B3';
         event.target.style.color = '#09093B';
         event.target.style.boxShadow = 'none';
@@ -70,9 +74,5 @@ operators.forEach( divs => {
 
 digits[12].addEventListener('click', () => {
     arg0 = '', arg1 = '', operator = '';
-    operators.forEach(el => {
-        el.style.background = '#09093B';
-        el.style.color = '#FFF';
-        el.style.boxShadow = '1px 1px 5px 5px #8080B3';
-    });
+    unhighlight();
 });
