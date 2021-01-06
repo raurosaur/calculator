@@ -22,8 +22,7 @@ let arg0 = '', arg1 = '', operator = '';
 
 digits.forEach( button => {
     button.addEventListener('click', (event) => {
-        if (event.target.getAttribute("data-type") === 'C' ||
-            event.target.getAttribute("data-type") === 'AC') {
+        if (event.target.getAttribute("data-type") === 'C' || event.target.getAttribute("data-type") === 'AC') {
             screen.textContent = '';
             return;
         }
